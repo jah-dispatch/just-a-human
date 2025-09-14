@@ -73,6 +73,22 @@ body, html {
   color: white;
   cursor: pointer;
 }
+a:link {
+  color: #32CD32; /* LimeGreen for unvisited */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FFD700; /* Gold for visited */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+a {
+  transition: color 0.3s ease;
+}
 /* Section-Specific Backgrounds */
 #mission {
   background-color: #333;
