@@ -1,3 +1,11 @@
+/* General Reset + Typography */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
 /* General Parallax Styling */
 .parallax {
   height: 100vh;
@@ -11,12 +19,28 @@
   color: white;
   text-align: center;
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+
+/* Section-Specific Backgrounds */
+#mission {
+  background-image: url('assets/images/gates.jpg');
 }
+#wizard {
+  background-image: url('assets/images/the-wizard.jpg');
+}
+#glimpses {
+  background-image: url('assets/images/glimpses.jpg');
+}
+#philosophy {
+  background-image: url('assets/images/why-stickers-matter.jpg');
+}
+#cartography {
+  background-image: url('assets/images/cartographic-intentions.jpg');
+}
+#footer {
+  background-image: url('assets/images/footer.jpg');
+}
+
+/* Content Styling */
 .content {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5));
   padding: 2rem;
@@ -26,24 +50,25 @@ body, html {
   margin: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
-  .content h1 {
+.content h1 {
   font-weight: 600;
 }
-
 .content p {
   font-weight: 300;
 }
+
+/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 60%;
   height: 100%;
+  padding: 2rem;
   background-color: rgba(0,0,0,0.85);
 }
-
 .modal-content {
   margin: 5% auto;
   display: flex;
@@ -52,7 +77,6 @@ body, html {
   flex-wrap: wrap;
   max-width: 90%;
 }
-
 .modal-content img {
   max-width: 200px;
   height: auto;
@@ -60,35 +84,8 @@ body, html {
   box-shadow: 0 0 10px rgba(255,255,255,0.2);
   transition: transform 0.3s ease;
 }
-
 .modal-content img:hover {
   transform: scale(1.05);
-}
-/* Base styles */
-.modal {
-  width: 60%;
-  padding: 2rem;
-  /* other desktop styles */
-}
-
-/* Responsive overrides */
-@media (max-width: 768px) {
-  .modal {
-    width: 90%;
-    padding: 1rem;
-    /* mobile-specific tweaks */
-  }
-
-  .modal-content img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-@media (max-width: 768px) {
-  .parallax {
-  background-attachment: scroll; /* fallback for mobile */
-  background-size: cover;
-  background-position: center;
 }
 .close {
   position: absolute;
@@ -98,13 +95,14 @@ body, html {
   color: white;
   cursor: pointer;
 }
+
+/* Link Styling */
 a:link {
-  color: #32CD32; /* LimeGreen for unvisited */
+  color: #32CD32;
   text-decoration: none;
 }
-
 a:visited {
-  color: #FFD700; /* Gold for visited */
+  color: #FFD700;
   text-decoration: none;
 }
 a:hover {
@@ -114,31 +112,37 @@ a:hover {
 a {
   transition: color 0.3s ease;
 }
-/* Section-Specific Backgrounds */
-#mission {
-  background-color: #333;
-  background-image: url('assets/images/gates.jpg');
-}
-#wizard {
-  background-color: #333;
-  background-image: url('assets/images/the-wizard.jpg');
-}
-#glimpses {
-  background-color: #333;
-  background-image: url('assets/images/glimpses.jpg'); /* Optional reuse or swap */
-}
 
-#philosophy {
-  background-color: #333;
-  background-image: url('assets/images/why-stickers-matter.jpg');
-}
+/* Mobile Fallback + Responsive Overrides */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
 
-#cartography {
-  background-color: #333;
-  background-image: url('assets/images/cartographic-intentions.jpg');
-}
+  .modal {
+    width: 90%;
+    padding: 1rem;
+  }
 
-#footer {
-  background-color: #333;
-  background-image: url('assets/images/footer.jpg');
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  .close {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+  }
 }
