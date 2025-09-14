@@ -16,6 +16,15 @@
       <p>This project exists to prove that kindness doesn’t need a spotlight. It’s a dispatch ministry built on emotional resonance, not recognition. Every sticker, every scroll, every whisper of encouragement is sent without expectation—just the belief that someone, somewhere, needed it.</p>
     </div>
   </section>
+  <section id="mission" class="parallax">
+  <div class="content">
+    <h1>Have You Received a Dispatch?</h1>
+    <p>Type the serial number from the back of the sticker to learn more.</p>
+    <input type="text" id="serialInput" placeholder="Enter your sticker serial number">
+    <button onclick="checkSerial()">Search</button>
+    <div id="searchResult"></div>
+  </div>
+</section>
 
   <!-- Section 2: The Wizard -->
   <section class="parallax" id="wizard">
@@ -100,6 +109,23 @@
     }, 300);
   });
 })();
+</script>
+  <script>
+function checkSerial() {
+  const input = document.getElementById("serialInput").value.trim();
+  const serial = parseInt(input.replace(/[^0-9]/g, ""), 10); // strip non-numeric
+
+  let result = "";
+
+  if (serial >= 9000 && serial <= 9150) {
+    window.location.href = "mesa-county.html";
+  } else if (serial >= 9151 && serial <= 9301) {
+    window.location.href = "next-region.html"; // placeholder for future batch
+  } else {
+    result = `<p>This sticker hasn't been dispatched yet. Double-check your serial number and try again...</p>`;
+    document.getElementById("searchResult").innerHTML = result;
+  }
+}
 </script>
 </body>
 </html>
