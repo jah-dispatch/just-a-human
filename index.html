@@ -75,19 +75,31 @@
 
   <script src="script.js"></script>
   <script>
-  (function() {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (!isMobile) return;
+(function() {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (!isMobile) return;
 
-    const sections = document.querySelectorAll('.parallax');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      sections.forEach(sec => {
-        const offset = Math.round((scrollY - sec.offsetTop) * 0.15);
-        sec.style.backgroundPosition = `center ${offset}px`;
-      });
-    }, { passive: true });
-  })();
+  let sections = document.querySelectorAll('.parallax');
+
+  function updateParallax() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    sections.forEach(sec => {
+      const offset = Math.round((scrollY - sec.offsetTop) * 0.15);
+      sec.style.backgroundPosition = `center ${offset}px`;
+    });
+  }
+
+  window.addEventListener('scroll', updateParallax, { passive: true });
+
+  // Reinitialize on orientation change
+  window.addEventListener('orientationchange', () => {
+    // Wait for layout to settle
+    setTimeout(() => {
+      sections = document.querySelectorAll('.parallax');
+      updateParallax();
+    }, 300);
+  });
+})();
 </script>
 </body>
 </html>
