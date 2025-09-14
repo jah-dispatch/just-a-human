@@ -74,5 +74,20 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  (function() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) return;
+
+    const sections = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      sections.forEach(sec => {
+        const offset = Math.round((scrollY - sec.offsetTop) * 0.15);
+        sec.style.backgroundPosition = `center ${offset}px`;
+      });
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
