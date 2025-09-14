@@ -64,7 +64,32 @@ body, html {
 .modal-content img:hover {
   transform: scale(1.05);
 }
+/* Base styles */
+.modal {
+  width: 60%;
+  padding: 2rem;
+  /* other desktop styles */
+}
 
+/* Responsive overrides */
+@media (max-width: 768px) {
+  .modal {
+    width: 90%;
+    padding: 1rem;
+    /* mobile-specific tweaks */
+  }
+
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .parallax {
+  background-attachment: scroll; /* fallback for mobile */
+  background-size: cover;
+  background-position: center;
+}
 .close {
   position: absolute;
   top: 20px;
