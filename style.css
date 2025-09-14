@@ -154,3 +154,18 @@ a {
     max-width: 80%;
   }
 }
+/* Dispatch Region styles */
+#mesa-county {
+  background-image: url('assets/images/mesacounty.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll; /* ensures no parallax effect */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: white;
+  text-align: center;
+}
