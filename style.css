@@ -11,6 +11,12 @@
   color: white;
   text-align: center;
 }
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 .content {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
   padding: 2rem;
@@ -19,6 +25,13 @@
   max-width: 800px;
   margin: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  .content h1 {
+  font-weight: 600;
+}
+
+.content p {
+  font-weight: 300;
+}
 }
 /* Section-Specific Backgrounds */
 #mission {
