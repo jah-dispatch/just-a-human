@@ -18,9 +18,9 @@
 }
 
 #wizard {
+  background-color: #333;
   background-image: url('assets/images/the-wizard.jpg');
 }
-
 #glimpses {
   background-image: url('assets/images/glimpses.jpg'); /* Optional reuse or swap */
 }
