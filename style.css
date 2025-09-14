@@ -116,28 +116,18 @@ a {
 /* Mobile Fallback + Responsive Overrides */
 @media (max-width: 768px) {
   .parallax {
-    background-attachment: scroll;
-    background-position: center top;
+    background-attachment: scroll;   /* disables parallax on mobile */
+    background-position: center top; /* consistent, flattering crop */
     background-size: cover;
-    min-height: 90vh;
-    height: auto;
-    padding: 4rem 0;
-  }
-
-  .modal {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .modal-content img {
-    max-width: 100%;
-    height: auto;
+    min-height: 90vh;                /* gives room without locking to exact viewport */
+    height: auto;                    /* prevents weird jumps on some browsers */
+    padding: 4rem 0;                 /* ensures vertical space if text grows */
   }
 
   .content {
     max-width: 90%;
     margin: 0 auto;
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.25rem;           /* tighter padding for small screens */
     border-radius: 12px;
   }
 
@@ -146,10 +136,21 @@ a {
     line-height: 1.2;
   }
 }
-
   .close {
     top: 10px;
     right: 20px;
     font-size: 30px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 992px) {
+  .parallax {
+    background-position: center center; /* re-center crop sideways */
+    min-height: 100vh;                  /* prevent “short panels” in landscape */
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .content {
+    max-width: 80%;
   }
 }
