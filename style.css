@@ -1,12 +1,5 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  scroll-behavior: smooth;
-}
-
+/* General Parallax Styling */
 .parallax {
-  background-image: url('assets/images/emerald-city-01.jpg'); /* Placeholder */
   height: 100vh;
   background-attachment: fixed;
   background-position: center;
@@ -19,8 +12,27 @@ body, html {
   text-align: center;
 }
 
-.content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
+/* Section-Specific Backgrounds */
+#mission {
+  background-image: url('assets/images/glimpses.jpg');
+}
+
+#wizard {
+  background-image: url('assets/images/the-wizard.jpg');
+}
+
+#glimpses {
+  background-image: url('assets/images/glimpses.jpg'); /* Optional reuse or swap */
+}
+
+#philosophy {
+  background-image: url('assets/images/why-stickers-matter.jpg');
+}
+
+#cartography {
+  background-image: url('assets/images/cartographic-intentions.jpg');
+}
+
+#footer {
+  background-image: url('assets/images/footer.jpg');
 }
