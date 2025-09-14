@@ -10,7 +10,7 @@ body, html {
 .parallax {
   height: 100vh;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -117,8 +117,11 @@ a {
 @media (max-width: 768px) {
   .parallax {
     background-attachment: scroll;
+    background-position: center top;
     background-size: cover;
-    background-position: center;
+    min-height: 90vh;
+    height: auto;
+    padding: 4rem 0;
   }
 
   .modal {
@@ -132,13 +135,17 @@ a {
   }
 
   .content {
-    padding: 1rem;
-    max-width: 95%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
   }
 
   h1, h2, h3 {
     font-size: 1.5rem;
+    line-height: 1.2;
   }
+}
 
   .close {
     top: 10px;
