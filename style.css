@@ -33,28 +33,31 @@ body, html {
 .content p {
   font-weight: 300;
 }
-}
 /* Section-Specific Backgrounds */
 #mission {
+  background-color: #333;
   background-image: url('assets/images/gates.jpg');
 }
-
 #wizard {
   background-color: #333;
   background-image: url('assets/images/the-wizard.jpg');
 }
 #glimpses {
+  background-color: #333;
   background-image: url('assets/images/glimpses.jpg'); /* Optional reuse or swap */
 }
 
 #philosophy {
+  background-color: #333;
   background-image: url('assets/images/why-stickers-matter.jpg');
 }
 
 #cartography {
+  background-color: #333;
   background-image: url('assets/images/cartographic-intentions.jpg');
 }
 
 #footer {
+  background-color: #333;
   background-image: url('assets/images/footer.jpg');
 }
