@@ -20,3 +20,10 @@ function searchDispatch(serial) {
     alert("This dispatch hasn’t been sent yet. But it’s waiting for the right moment.");
   }
 }
+function openGallery() {
+  document.getElementById("galleryModal").style.display = "block";
+}
+
+function closeGallery() {
+  document.getElementById("galleryModal").style.display = "none";
+}
