@@ -208,31 +208,17 @@ a {
   border-radius: 8px; /* Optional: soft edges for emotional gentleness */
 }
 /* Dispatch Region styles */
-#mesa-county {
-  background-image: url('assets/images/mesacounty.jpg');
+.region-background {
+  background-image: url('assets/images/why-stickers-matter.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: scroll; /* ensures no parallax effect */
+  background-attachment: scroll;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 4rem 2rem;
   color: white;
-  text-align: center;
 }
-#san-juan {
-  background-image: url('assets/images/sanjuan.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: scroll; /* ensures no parallax effect */
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  color: white;
-  text-align: center;
+.scroll-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
