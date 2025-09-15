@@ -222,3 +222,8 @@ a {
   max-width: 800px;
   margin: 0 auto;
 }
+/* Google Map Logic */
+.map-container {
+  margin: 2rem auto;
+  max-width: 800px;
+}
