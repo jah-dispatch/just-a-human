@@ -227,3 +227,47 @@ a {
   margin: 2rem auto;
   max-width: 800px;
 }
+.comment-wrapper {
+  background-color: #f5f5f5; /* Soft light background */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Dispatch Thread Comments */
+.commentbox {
+  color: #333; /* Dark text for readability */
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+.commentbox textarea,
+.commentbox input {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.commentbox button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.commentbox button:hover {
+  background-color: #45a049;
+}
+.comment-title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
