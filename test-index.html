@@ -110,8 +110,10 @@
   });
 })();
 </script>
+  
+<script type="module">
+  console.log("Supabase script loaded")  // ✅ This confirms the script is running
 
- <script type="module">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
   const supabaseUrl = 'https://ekhqzhqvhrwsmhlqp.supabase.co'
