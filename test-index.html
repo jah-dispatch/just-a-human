@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just a Human</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="mission" class="parallax">
+  <div class="content">
+    <h1>Have You Received a Dispatch?</h1>
+    <p>Type the serial number from the back of the sticker to learn more.</p>
+    <input type="text" id="serialInput" placeholder="Enter your sticker serial number">
+<button onclick="routeSticker()">Track Dispatch</button>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+  const supabase = createClient('https://ekxhqzvhuvymrwsmhlqp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVreGhxenZodXZ5bXJ3c21obHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTQ3NjcsImV4cCI6MjA3MzYzMDc2N30.xtZCb5qtl9bGSPOreTVtTSdB_8sEYdGZOYnwrpX91M0')
+
+  async function routeSticker() {
+    const serial = document.getElementById("serialInput").value.trim()
+
+    const { data, error } = await supabase
+      .from('dispatch_ledger')
+      .select('landing_page')
+      .eq('serial_number', serial)
+      .single()
+
+    if (data && data.landing_page) {
+      window.location.href = data.landing_page
+    } else {
+      alert("That sticker hasn't been dispatched yet. Please check and try again.")
+    }
+  }
+</script>
+  </div>
+</section>
+  <!-- Section 1: Mission Directive -->
+  <section class="parallax" id="mission">
+    <div class="content">
+      <h1>Mission Directive</h1>
+      <p>This project exists to prove that kindness doesn’t need a spotlight. It’s a dispatch ministry built on emotional resonance, not recognition. Every sticker, every scroll, every whisper of encouragement is sent without expectation—just the belief that someone, somewhere, needed it.</p>
+    </div>
+  </section>
+
+
+  <!-- Section 2: The Wizard -->
+  <section class="parallax" id="wizard">
+    <div class="content">
+      <h1>The Wizard</h1>
+      <p>You may call me "The Wizard" but only in jest, because I’m not here to be <i>known</i>. Rather, I exist here to be <i>felt</i>. I live with several mental health challenges, including experiences on the schizophrenia spectrum. <strong>My family?</strong> <i>Ceases to exist.</i> <strong> Friends?</strong> <i>What are those?</i> But that doesn’t make me broken. <i>It makes me "just a human."</i> This project is my quiet rebellion against stigma...a sort of living archive of cartographed empathy from someone who’s been told they shouldn’t have any at all. <strong>I do.</strong> And I’m sending it out in stickers to uplift others as a means to keep my cognitive functioning active, with the tenacious hope that it restores a little humility amongst a broken system built on deceit, corruption, and selfish world views along the way.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Glimpses of Emerald City -->
+  <section class="parallax" id="glimpses">
+    <div class="content">
+      <h1>The Emerald City, OZ</h1>
+      <h2>Zip Code: 71025</h2>
+      <p>The Emerald City isn’t merely a place. It’s a state of being where peace thrives and malevolence dissolves. It’s mythic, yes. Misty, and sovereign all the way. These visuals are my interpretation of what emotional safety looks like—layered in green, wrapped in fog, and free of judgment.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: Dispatch Philosophy -->
+  <section class="parallax" id="philosophy">
+    <div class="content">
+      <h1>Dispatch Philosophy</h1>
+      <p>Stickers are small, but they travel far. They’re anonymous acts of care—no return address, no ego. Just a message that says, “You were thought of.” This project is about sending encouragement without strings, and letting kindness be the only currency that matters.</p>
+    </div>
+  </section>
+
+  <!-- Section 5: Cartographic Intentions -->
+  <section class="parallax" id="cartography">
+    <div class="content">
+      <h1>Cartographic Intentions</h1>
+      <p>A preview of stickers sent around the nation.</p>
+      <a href="#" onclick="openGallery()">🖼️ View Sticker Design Gallery</a>
+
+<div id="galleryModal" class="modal">
+  <span onclick="closeGallery()" class="close">&times;</span>
+  <div class="modal-content">
+    <img src="assets/images/sticker1-thumb.png" alt="Design 1" />
+    <img src="assets/images/sticker2-thumb.png" alt="Design 2" />
+    <img src="assets/images/sticker3-thumb.png" alt="Design 3" />
+    <img src="assets/images/sticker4-thumb.png" alt="Design 4" />
+    <img src="assets/images/sticker5-thumb.png" alt="Design 5" />
+    <img src="assets/images/sticker6-thumb.png" alt="Design 6" />
+        <!-- Add more as needed -->
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Section 6: Just a Human -->
+  <footer class="parallax" id="footer">
+    <div class="content">
+      <h1>Why "Just a Human?"</h1>
+      <h2>You don't need to be known to be kind.</h2>
+      <p>I’m not a brand. Neither am I a movement. I’m just a human—trying to prove that empathy can be scalable, even when it’s anonymous. This isn’t about being perfect as much as it is being present. And if you’ve ever felt unseen, this dispatch is for you.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+(function() {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (!isMobile) return;
+
+  let sections = document.querySelectorAll('.parallax');
+
+  function updateParallax() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    sections.forEach(sec => {
+      const offset = Math.round((scrollY - sec.offsetTop) * 0.15);
+      sec.style.backgroundPosition = `center ${offset}px`;
+    });
+  }
+
+  window.addEventListener('scroll', updateParallax, { passive: true });
+
+  // Reinitialize on orientation change
+  window.addEventListener('orientationchange', () => {
+    // Wait for layout to settle
+    setTimeout(() => {
+      sections = document.querySelectorAll('.parallax');
+      updateParallax();
+    }, 300);
+  });
+})();
+</script>
+  
+</body>
+</html>
