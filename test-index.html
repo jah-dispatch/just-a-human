@@ -111,19 +111,26 @@
 })();
 </script>
 
-  <script type="module">
+ <script type="module">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-  const supabase = createClient('https://ekxhqzvhuvymrwsmhlqp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVreGhxenZodXZ5bXJ3c21obHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTQ3NjcsImV4cCI6MjA3MzYzMDc2N30.xtZCb5qtl9bGSPOreTVtTSdB_8sEYdGZOYnwrpX91M0')
+  const supabaseUrl = 'https://ekhqzhqvhrwsmhlqp.supabase.co'
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVreGhxenZodXZ5bXJ3c21obHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTQ3NjcsImV4cCI6MjA3MzYzMDc2N30.xtZCb5qtl9bGSPOreTVtTSdB_8sEYdGZOYnwrpX91M0'
+
+  const supabase = createClient(supabaseUrl, supabaseKey)
 
   async function routeSticker() {
     const serial = document.getElementById("serialInput").value.trim()
+    console.log("Searching for:", serial)
 
     const { data, error } = await supabase
       .from('dispatch_ledger')
       .select('landing_page')
       .eq('serial_number', serial)
       .single()
+
+    console.log("Returned data:", data)
+    console.log("Returned error:", error)
 
     if (data && data.landing_page) {
       window.location.href = data.landing_page
