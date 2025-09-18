@@ -117,28 +117,25 @@
   const supabase = createClient('https://ekxhqzvhuvymrwsmhlqp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVreGhxenZodXZ5bXJ3c21obHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTQ3NjcsImV4cCI6MjA3MzYzMDc2N30.xtZCb5qtl9bGSPOreTVtTSdB_8sEYdGZOYnwrpX91M0')
 
   async function routeSticker() {
-    console.log("Raw input:", document.getElementById("serialInput").value)
-console.log("Trimmed input:", serial)
-console.log("Length:", serial.length)
-    console.log("Searching for:", serial)
+  const serial = document.getElementById("serialInput").value.trim()
+  console.log("Searching for:", serial)
 
-    const { data, error } = await supabase
-      .from('dispatch_ledger')
-      .select('landing_page')
-      .eq('serial_number', serial)
-      .single()
+  const { data, error } = await supabase
+    .from('dispatch_ledger')
+    .select('landing_page')
+    .eq('serial_number', serial)
+    .single()
 
-const serial = 'A2B-8'
-    
-    console.log("Returned data:", data)
-    console.log("Returned error:", error)
+  console.log("Returned data:", data)
+  console.log("Returned error:", error)
 
-    if (data && data.landing_page) {
-      window.location.href = data.landing_page
-    } else {
-      console.log("Sticker not found")
-    }
+  if (data && data.landing_page) {
+    console.log("Redirecting to:", data.landing_page)
+    window.location.href = data.landing_page
+  } else {
+    console.log("Sticker not found")
   }
+}
 
   // ✅ This must be outside the function
   window.routeSticker = routeSticker
