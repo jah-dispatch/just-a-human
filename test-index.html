@@ -132,11 +132,11 @@
     if (data && data.landing_page) {
       window.location.href = data.landing_page
     } else {
-      alert("That sticker hasn't been dispatched yet. Please check and try again.")
+      console.log("Sticker not found")
     }
   }
 
-  // 👇 This is the magic binding line
+  // ✅ This must be outside the function
   window.routeSticker = routeSticker
 </script>
   
