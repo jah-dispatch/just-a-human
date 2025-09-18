@@ -112,14 +112,9 @@
 </script>
   
 <script type="module">
-  console.log("Supabase script loaded")
-
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-  const supabaseUrl = 'https://ekhqzhqvhrwsmhlqp.supabase.co'
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVreGhxenZodXZ5bXJ3c21obHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTQ3NjcsImV4cCI6MjA3MzYzMDc2N30.xtZCb5qtl9bGSPOreTVtTSdB_8sEYdGZOYnwrpX91M0'
-
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const supabase = createClient('https://ekhqzhqvhrwsmhlqp.supabase.co', 'your-anon-key')
 
   async function routeSticker() {
     const serial = document.getElementById("serialInput").value.trim()
@@ -141,7 +136,8 @@
     }
   }
 
-  window.routeSticker = routeSticker  // ✅ This binds the function to the button
+  // 👇 This is the magic binding line
+  window.routeSticker = routeSticker
 </script>
   
 </body>
