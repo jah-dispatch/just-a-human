@@ -13,7 +13,7 @@
     <h1>Have You Received a Dispatch?</h1>
     <p>Type the serial number from the back of the sticker to learn more.</p>
     <input type="text" id="serialInput" placeholder="Enter your sticker serial number">
-<button onclick="routeSticker()">Track Dispatch</button>
+    <button onclick="routeSticker()">Track Dispatch</button>
 
   </div>
 </section>
@@ -112,7 +112,7 @@
 </script>
   
 <script type="module">
-  console.log("Supabase script loaded")  // ✅ This confirms the script is running
+  console.log("Supabase script loaded")
 
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
@@ -140,6 +140,8 @@
       alert("That sticker hasn't been dispatched yet. Please check and try again.")
     }
   }
+
+  window.routeSticker = routeSticker  // ✅ This binds the function to the button
 </script>
   
 </body>
