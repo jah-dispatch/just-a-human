@@ -141,12 +141,12 @@ body, html {
 }
 /* Dispatch Page Sticker Display */
 .sticker-thumb {
-  float: right;
-  margin: 0 0 20px 20px;
-  max-width: 200px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: block;          /* makes the image respect margin auto */
+  margin: 0 auto;          /* centers it horizontally */
+  max-width: 300px;        /* limit width */
+  max-height: 300px;       /* limit height */
+  width: auto;             /* keep aspect ratio */
+  height: auto;            /* keep aspect ratio */
 }
 /* Link Styling */
 a:link {
