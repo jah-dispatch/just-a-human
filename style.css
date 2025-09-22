@@ -56,6 +56,9 @@ body, html {
 #dispatch {
   background-image: url('assets/images/why-stickers-matter.jpg');
 }
+#tracker {
+  background-image: url('assets/images/emerald-sky.jpg');
+}
 #mission {
   background-image: url('assets/images/emerald-gates.png');
 }
