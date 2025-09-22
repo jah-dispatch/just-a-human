@@ -223,6 +223,29 @@ a {
     max-width: 80%;
   }
 }
+/* Google Map Integration */
+.googlemap {
+  position: relative;
+  width: 100%;          /* take full width of container */
+  max-width: 600px;     /* optional: cap width on large screens */
+  margin: 0 auto;       /* center horizontally */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;            /* let padding control height */
+  overflow: hidden;
+  border-radius: 8px;   /* optional: rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optional: subtle shadow */
+}
+
+.googlemap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* responsive scaling */
+  height: 100%;  /* responsive scaling */
+  border: 0;
+  max-width: 300px;   /* cap width on small screens */
+  max-height: 300px;  /* cap height on small screens */
+}
 /* YouTube Embeds */
 .video-container {
   position: relative;
